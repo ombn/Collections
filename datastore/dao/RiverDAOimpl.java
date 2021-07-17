@@ -2,16 +2,16 @@ package com.xworkz.datastore.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 import com.xworkz.datastore.dto.RiverDTO;
 
 public class RiverDAOimpl implements RiverDAO {
-// Logic to connect to data store
 	private List<RiverDTO> list = new ArrayList<RiverDTO>();
 	@Override
 	public boolean save(RiverDTO dto) {
 		System.out.println("dto: "+dto);
-		System.out.println("dto was added: ");
+		System.out.println("dto was added");
 		return list.add(dto);
 	}
 	@Override
@@ -38,5 +38,18 @@ public class RiverDAOimpl implements RiverDAO {
 		}
 		System.out.println("river not exist, cannot remove");
 		return false;
+	}
+	@Override
+	public RiverDTO findByName(String name) {
+		RiverDTO dto = null;
+		Iterator<RiverDTO> itr = this.list.iterator();
+		while(itr.hasNext()) {
+			RiverDTO riverDTO = itr.next();
+			if(riverDTO.getName().equals(name)) {
+				dto = riverDTO;
+				break;
+			}
+		}
+		return dto;
 	}
 }
