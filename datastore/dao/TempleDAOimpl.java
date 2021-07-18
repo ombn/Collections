@@ -153,9 +153,9 @@ public class TempleDAOimpl implements TempleDAO {
 		Collection <String> collection = new ArrayList<>();
 		while (itr.hasNext()) {
 			TempleDTO templeDTO = itr.next();
-			System.out.println("***Found all locations***");
 			collection.add(templeDTO.getLocation());
 			}
+		System.out.println("***Found all locations***");
 		return collection;
 	}
 }

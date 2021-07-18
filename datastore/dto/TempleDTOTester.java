@@ -16,50 +16,50 @@ public class TempleDTOTester {
 		
 		TempleDAO dao = new TempleDAOimpl();
 		
-		System.out.println("_____");
+		System.out.println("________________");
 		dao.save(dto1);
 		dao.save(dto2);	
 		dao.save(dto3);
 		dao.save(dto4);
 		
-		System.out.println("_____");
+		System.out.println("________________");
 		System.out.println(dao.totalItems());
 		
-		System.out.println("_____");
+		System.out.println("________________");
 		TempleDTO dtoDelete = new TempleDTO(4, "Hanuman Temple", "Salem", 700, "pongal", 8, true, "Hanuman", false);
 		dao.delete(dtoDelete);
 		
-		System.out.println("_____");
+		System.out.println("________________");
 		System.out.println(dao.findFirstItem());
 		
-		System.out.println("_____");
+		System.out.println("________________");
 		System.out.println(dao.findLastItem());
 		
-		System.out.println("_____");
+		System.out.println("________________");
 		System.out.println(dao.findByName("Golden Temple"));
 		
-		System.out.println("_____");
+		System.out.println("________________");
 		System.out.println(dao.findByLocation("Chennai"));
 		
-		System.out.println("_____");
+		System.out.println("________________");
 		System.out.println(dao.findByLocationAndName("Ganesha Temple", "Chennai"));
 		
-		System.out.println("_____");
+		System.out.println("________________");
 		Collection<TempleDTO> collection1 = dao.findAll();
 		for(TempleDTO temple : collection1) {
 			System.out.println(temple);
 		}
-		System.out.println("_____");
+		System.out.println("________________");
 		Collection<TempleDTO> collection2 = dao.findAllTempleByLocationStartsWith('C');
 		for(TempleDTO temple : collection2) {
 			System.out.println(temple);
 		}
-		System.out.println("_____");
+		System.out.println("________________");
 		Collection<TempleDTO> collection3 = dao.findAllTempleByNoOfPoojarisGreaterThan(8);
 		for(TempleDTO temple : collection3) {
 			System.out.println(temple);
 		}
-		System.out.println("_____");
+		System.out.println("________________");
 		Collection<TempleDTO> collection4 = dao.findAllTempleByEntryFeeGreaterThan(600);
 		for(TempleDTO temple : collection4) {
 			System.out.println(temple);
