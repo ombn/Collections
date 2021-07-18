@@ -60,6 +60,12 @@ public class TempleDTO implements Serializable{
 	public void setKalyani(boolean kalyani) {
 		this.kalyani = kalyani;
 	}
+	public int getNoOfPoojaris() {
+		return noOfPoojaris;
+	}
+	public void setNoOfPoojaris(int noOfPoojaris) {
+		this.noOfPoojaris = noOfPoojaris;
+	}
 	@Override
 	public String toString() {
 		return "TempleDTO [id=" + id + ", name=" + name + ", location=" + location + ", entryFee=" + entryFee

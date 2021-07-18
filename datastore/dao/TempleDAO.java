@@ -19,4 +19,5 @@ public interface TempleDAO {
 	Collection<TempleDTO> findAllTempleByEntryFeeGreaterThan(double cost);
 	Collection<TempleDTO> findAllTempleByNoOfPoojarisGreaterThan(int no);
 	String findLocationByName(String name);
+	Collection<String> findAllLocations();
 }
