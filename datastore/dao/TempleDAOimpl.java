@@ -126,10 +126,10 @@ public class TempleDAOimpl implements TempleDAO {
 		while( entryFeeGreaterThan.hasNext()) {
 			TempleDTO templeDTO = entryFeeGreaterThan.next();
 			if(templeDTO.getEntryFee() > cost) {
-				System.out.println("***All temple by Entry-fee greater than '"+cost+"'***");
 				collection.add(templeDTO);
 			}
 		}
+		System.out.println("***All temple by Entry-fee greater than '"+cost+"'***");
 		return collection;
 	}
 
@@ -140,10 +140,10 @@ public class TempleDAOimpl implements TempleDAO {
 		while( PoojarisGreaterThan.hasNext()) {
 			TempleDTO templeDTO = PoojarisGreaterThan.next();
 			if(templeDTO.getNoOfPoojaris() > no) {
-			System.out.println("***All temple by no. of poojaris greater than '"+no+"'***");
 			collection.add(templeDTO);
 			}
 		}
+		System.out.println("***All temple by no. of poojaris greater than '"+no+"'***");
 		return collection;
 	}
 
@@ -153,9 +153,9 @@ public class TempleDAOimpl implements TempleDAO {
 		Collection <String> collection = new ArrayList<>();
 		while (itr.hasNext()) {
 			TempleDTO templeDTO = itr.next();
+			System.out.println("***Found all locations***");
 			collection.add(templeDTO.getLocation());
 			}
-		System.out.println("***Found all locations***");
 		return collection;
 	}
 }
