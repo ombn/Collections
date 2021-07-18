@@ -93,10 +93,10 @@ public class TempleDAOimpl implements TempleDAO {
 		while (itr.hasNext()) {
 			TempleDTO templeDTO = itr.next();
 			if (templeDTO.getLocation().startsWith(s)) {
-				System.out.println("***All temple by location starts With '"+character+"'***");
 				collection.add(templeDTO);
 			}
 		}
+		System.out.println("***All temple by location starts With '"+character+"'***");
 		return collection;
 	}
 	
