@@ -105,9 +105,8 @@ public class HighwayDAOimpl implements HighwayDAO {
 		Iterator<HighwayDTO> itr = this.list.iterator();
 		HighwayDTO dto = itr.next();
 		while (itr.hasNext()) {
-			double length = dto.getLength();
 			HighwayDTO highwayDTO = itr.next();
-			if(highwayDTO.getLength() > length) {
+			if(highwayDTO.getLength() > dto.getLength()) {
 				dto = highwayDTO;
 			}
 		}
@@ -120,9 +119,8 @@ public class HighwayDAOimpl implements HighwayDAO {
 		Iterator<HighwayDTO> itr = this.list.iterator();
 		HighwayDTO dto = itr.next();
 		while (itr.hasNext()) {
-			double length = dto.getLength();
 			HighwayDTO highwayDTO = itr.next();
-			if(highwayDTO.getLength() < length) {
+			if(highwayDTO.getLength() < dto.getLength()) {
 				dto = highwayDTO;
 			}
 		}
