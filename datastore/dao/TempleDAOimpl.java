@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 import com.xworkz.datastore.dto.TempleDTO;
 
@@ -121,10 +120,10 @@ public class TempleDAOimpl implements TempleDAO {
 	
 	@Override
 	public Collection<TempleDTO> findAllTempleByEntryFeeGreaterThan(double cost) {
-		Collection<TempleDTO> collection = new ArrayList <TempleDTO>();
-		Iterator<TempleDTO> entryFeeGreaterThan = this.list.iterator();
-		while( entryFeeGreaterThan.hasNext()) {
-			TempleDTO templeDTO = entryFeeGreaterThan.next();
+		Collection<TempleDTO> collection = new ArrayList <>();
+		Iterator<TempleDTO> itr = this.list.iterator();
+		while( itr.hasNext()) {
+			TempleDTO templeDTO = itr.next();
 			if(templeDTO.getEntryFee() > cost) {
 				collection.add(templeDTO);
 			}
@@ -136,9 +135,9 @@ public class TempleDAOimpl implements TempleDAO {
 	@Override
 	public Collection<TempleDTO> findAllTempleByNoOfPoojarisGreaterThan(int no) {
 		Collection<TempleDTO> collection = new ArrayList <TempleDTO>();
-		Iterator<TempleDTO> PoojarisGreaterThan = this.list.iterator();
-		while( PoojarisGreaterThan.hasNext()) {
-			TempleDTO templeDTO = PoojarisGreaterThan.next();
+		Iterator<TempleDTO> itr = this.list.iterator();
+		while( itr.hasNext()) {
+			TempleDTO templeDTO = itr.next();
 			if(templeDTO.getNoOfPoojaris() > no) {
 			collection.add(templeDTO);
 			}
