@@ -102,11 +102,12 @@ public class HighwayDAOimpl implements HighwayDAO {
 
 	@Override
 	public HighwayDTO findByMaxLength() {
+		//500,650,200,300-- > Not Efficient --Collections.Max()--> Reduce Iterations 
 		Iterator<HighwayDTO> itr = this.list.iterator();
-		HighwayDTO dto = itr.next();
+		HighwayDTO dto = itr.next();// 650 
 		while (itr.hasNext()) {
-			HighwayDTO highwayDTO = itr.next();
-			if(highwayDTO.getLength() > dto.getLength()) {
+			HighwayDTO highwayDTO = itr.next(); // 300 > 650 
+			if(highwayDTO.getLength() > dto.getLength()) {//false
 				dto = highwayDTO;
 			}
 		}
